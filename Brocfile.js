@@ -15,7 +15,13 @@ var app = new EmberApp({
         'app': '/assets/project.css'
       }
     }
-  }
+  },
+  // minifyCSS: {
+  //   enabled: true
+  // },
+  // minifyJS: {
+  //   enabled: true
+  // }
 });
 
 // Use `app.import` to add additional libraries to the generated
