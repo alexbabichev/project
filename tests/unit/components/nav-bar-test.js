@@ -3,6 +3,7 @@ import { moduleForComponent, test } from 'ember-qunit';
 moduleForComponent('nav-bar', 'Unit | Component | nav bar', {
   // Specify the other units that are required for this test
   // needs: ['component:foo', 'helper:bar'],
+  needs: ['component:link-li'],
   unit: true
 });
 
@@ -15,5 +16,6 @@ test('it renders', function(assert) {
 
   // Renders the component to the page
   this.render();
+  console.log(component._state);
   assert.equal(component._state, 'inDOM');
 });
