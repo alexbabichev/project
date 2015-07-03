@@ -16,6 +16,5 @@ test('it renders', function(assert) {
 
   // Renders the component to the page
   this.render();
-  console.log(component._state);
   assert.equal(component._state, 'inDOM');
 });

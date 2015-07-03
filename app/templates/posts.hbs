@@ -3,4 +3,11 @@
 
 <hr>
 
+{{posts}}
+<ul>
+  {{#each model as |post|}}
+    <li>{{post.post_description}}!</li>
+  {{/each}}
+</ul>
+
 {{outlet}}

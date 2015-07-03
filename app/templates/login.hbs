@@ -7,13 +7,13 @@
     <div class="form-group">
       <label for="inputUsername" class="col-lg-2 control-label">Username</label>
       <div class="col-lg-10">
-        <input type="text" class="form-control" id="inputUsername" placeholder="Username">
+        {{input type="text" classNames='form-control' value=username placeholder="Enter your username"}}
       </div>
     </div>
     <div class="form-group">
       <label for="inputPassword" class="col-lg-2 control-label">Password</label>
       <div class="col-lg-10">
-        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+        {{input type="text" classNames='form-control' value=password placeholder="Enter your password"}}
         <div class="checkbox">
           <label>
             <input type="checkbox"> Remember me
@@ -24,10 +24,21 @@
     <div class="form-group">
       <div class="col-lg-10 col-lg-offset-2">
         <button type="reset" class="btn btn-default">Cancel</button>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button class="btn btn-primary" {{action 'login'}}>Submit</button>
       </div>
     </div>
   </fieldset>
 </form>
+{{#if error}}
+<div class="alert alert-dismissible alert-danger">
+  <button type="button" class="close" data-dismiss="alert">×</button>
+  <h4>Error!</h4>
+  <p>{{error.message}}</p>
+</div>
+{{/if}}
 
 {{outlet}}
+
+<p>
+  {{user.username}}
+</p>

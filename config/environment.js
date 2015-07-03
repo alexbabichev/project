@@ -19,13 +19,22 @@ module.exports = function(environment) {
     },
     contentSecurityPolicy: {
       'default-src': "'none'",
-      'script-src': "'self' https://cdn.mxpnl.com", // Allow scripts from https://cdn.mxpnl.com
-      'font-src': "'self' https://fonts.gstatic.com", // Allow fonts to be loaded from http://fonts.gstatic.com
-      'connect-src': "'self' http://custom-api.local", // Allow data (ajax/websocket) from api.mixpanel.com and custom-api.local
+      'script-src': "'self' https://cdn.mxpnl.com", // Allow scripts
+      'font-src': "'self' https://fonts.gstatic.com", // Allow fonts to be loaded
+      'connect-src': "'self' http://dev.manage.fahlo.me https://dev.manage.fahlo.me", // Allow data (ajax/websocket)
       'img-src': "'self'",
-      'style-src': "'self' 'unsafe-inline' https://fonts.googleapis.com", // Allow inline styles and loaded CSS from http://fonts.googleapis.com
+      'style-src': "'self' 'unsafe-inline' https://fonts.googleapis.com", // Allow inline styles and loaded CSS
       'media-src': "'self'"
     }
+  };
+
+  ENV['simple-auth'] = {
+    crossOriginWhitelist: ['https://dev.manage.fahlo.me', 'http://dev.manage.fahlo.me'],
+    authorizer: 'authorizer:custom'
+  };
+
+  ENV.FIXTURES = {
+    enabled: true
   };
 
   if (environment === 'development') {
