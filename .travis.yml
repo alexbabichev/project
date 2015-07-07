@@ -22,6 +22,9 @@ install:
 script:
   - npm test
 
+before_deploy:
+  - ember build
+
 deploy:
   provider: deis
   controller: deis.dev.bkstg.com
