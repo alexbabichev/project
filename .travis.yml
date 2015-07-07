@@ -24,6 +24,7 @@ script:
 
 before_deploy:
   - ember build
+  - git config --global alexbabichev alexbabichev@bkstg.org
   - git add -f dist/*
   - git commit -m 'dist'
 
