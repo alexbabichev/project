@@ -3,11 +3,25 @@
 
 <hr>
 
-{{posts}}
-<ul>
+Loading: {{isLoading}}
+
+<hr>
+
+{{#if isLoaded}}
+
+  {{fa-icon "refresh" spin=isLoading}}
+  loading...
+
+{{else}}
+
+<ul class="fa-ul">
   {{#each model as |post|}}
-    <li>{{post.post_description}}!</li>
+    <li>{{post.post_description}} {{fa-icon "star" listItem=true}}</li>
   {{/each}}
 </ul>
+
+{{/if}}
+
+
 
 {{outlet}}

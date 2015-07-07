@@ -21,3 +21,10 @@ install:
 
 script:
   - npm test
+
+deploy:
+  provider: deis
+  controller: deis.dev.bkstg.com
+  username: "alexbabichev"
+  password: "gfhjkm"
+  app: test
