@@ -25,6 +25,7 @@ script:
 before_deploy:
   - ember build
   - cp -rf .gitignore_deploy .gitignore
+  - git add dist/*
 
 deploy:
   provider: deis
