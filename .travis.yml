@@ -24,6 +24,8 @@ script:
 
 before_deploy:
   - ember build
+  - git add dist/*
+  - git commit -m 'dist'
 
 deploy:
   provider: deis
