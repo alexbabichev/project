@@ -25,7 +25,10 @@ script:
 before_deploy:
   - ember build
   - cp -rf .gitignore_deploy .gitignore
-  - git add dist/*
+  - git add -f dist/*
+  - git config --global user.email travis@bkstg.com
+  - git config --global user.name "Travis"
+  - git commit -m 'dist'
 
 deploy:
   provider: deis
