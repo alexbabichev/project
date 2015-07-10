@@ -3,16 +3,19 @@
 
 @import "variables";
 
-@import "bootswatch";
+@import "admin-lte";
 
+@import "skin-blue-light";
 
-body {
-  background-color: white;
-  padding-top: 50px;
-}
-
-.navbar-brand {
+.logo {
+  background-color: #333 !important;
   img {
     width: 80px;
+  }
+}
+
+.main-header {
+  .navbar {
+    background-color: #333 !important;
   }
 }

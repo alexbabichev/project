@@ -1,27 +1,51 @@
+<section class="content-header">
+  <h1>
+    Posts
+    <small>Feed</small>
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li class="active">Posts</li>
+  </ol>
+</section>
+<section class="content">
 
-<h2 id="title">Posts</h2>
+  <ul class="timeline">
+    {{#each model as |post|}}
+    <!-- timeline time label -->
+    <li class="time-label">
+        <span class="bg-red">
+            {{format-date post.publish_date 'LL'}}
+        </span>
+    </li>
+    <!-- /.timeline-label -->
+    <!-- timeline item -->
+    <li>
+        <!-- timeline icon -->
+        <i class="fa fa-envelope bg-blue"></i>
+        <div class="timeline-item">
+            <span class="time"><i class="fa fa-clock-o"></i> {{format-date post.publish_date 'h ss a'}}</span>
 
-<hr>
+            <h3 class="timeline-header"><a href="#">{{post.author.first_name}}</a></h3>
 
-Loading: {{isLoading}}
+            <div class="timeline-body">
+                {{post.post_description}}
+            </div>
 
-<hr>
-
-{{#if isLoaded}}
-
-  {{fa-icon "refresh" spin=isLoading}}
-  loading...
-
-{{else}}
-
-<ul class="fa-ul">
-  {{#each model as |post|}}
-    <li>{{post.post_description}} {{fa-icon "star" listItem=true}}</li>
-  {{/each}}
+            <div class="timeline-footer">
+                <a class="btn btn-primary btn-xs">...</a>
+            </div>
+        </div>
+    </li>
+    {{/each}}
+    <!-- END timeline item -->
+    <li>
+      <i class="fa fa-clock-o bg-gray"></i>
+    </li>
 </ul>
 
-{{/if}}
-
-
+<hr>
 
 {{outlet}}
+
+</section>

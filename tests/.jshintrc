@@ -21,7 +21,9 @@
     "andThen",
     "currentURL",
     "currentPath",
-    "currentRouteName"
+    "currentRouteName",
+    "_",
+    "moment"
   ],
   "node": false,
   "browser": false,

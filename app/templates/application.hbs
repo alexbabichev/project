@@ -1,14 +1,25 @@
 
-{{nav-bar}}
+<section class="wrapper">
 
-<div class="container">
+  <header class="main-header">
+    {{top-bar}}
+  </header>
 
-  <div class="row">
+  <aside>
+    {{sidebar-nav}}
+  </aside>
 
+  <section class="content-wrapper" style="min-height: 1000px">
     {{outlet}}
-
     {{isLoading}}
+  </section>
 
-  </div>
+    <!-- The Right Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
 
-</div>
+  </aside>
+  <!-- The sidebar's background -->
+  <!-- This div must placed right after the sidebar for it to work-->
+  <div class="control-sidebar-bg"></div>
+
+</section>

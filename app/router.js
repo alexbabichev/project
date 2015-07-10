@@ -8,8 +8,9 @@ var Router = Ember.Router.extend({
 Router.map(function() {
   this.route('foo');
   this.route('login');
-  this.resource('posts');
+  this.route('posts');
   this.route('dashboard');
+  this.route('reports');
 });
 
 export default Router;
