@@ -7,14 +7,14 @@
 
 @import "skin-blue-light";
 
-.logo {
-  background-color: #333 !important;
-  img {
-    width: 80px;
-  }
-}
-
 .main-header {
+  .logo {
+    background-color: #333 !important;
+    text-align: left;
+    img {
+      width: 80px;
+    }
+  }
   .navbar {
     background-color: #333 !important;
   }
